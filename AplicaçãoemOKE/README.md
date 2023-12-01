@@ -15,7 +15,7 @@ if __name__ == '__main__':
   Estamos usando o Flask, onde há uma rota de POST aceitável para o path /answer que faz determinada ação, rodando no ambiente local para a porta 3000.
 
 ## Provisionando Cluster OKE
-Efetuar provisionamento do cluster OKE conforme documentação oficial da Oracle > https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingclusterusingoke_topic-Using_the_Console_to_create_a_Quick_Cluster_with_Default_Settings.htm#create-quick-cluster
+Efetuar provisionamento do cluster OKE conforme [documentação oficial da Oracle](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingclusterusingoke_topic-Using_the_Console_to_create_a_Quick_Cluster_with_Default_Settings.htm#create-quick-cluster)
 
 ## Criando imagem docker
 
@@ -23,7 +23,7 @@ Esse passo pode ser feito inicialmente no cloud shell ou em um máquina virtual 
 
 1. Criar a pasta do projeto com os arquivos necessários para a construção da imagem:
 
-Dockerfile: um arquivo de configuração usado no Docker, uma plataforma de contêineres que permite empacotar, distribuir e executar aplicativos em contêineres. Exemplo: 
+Dockerfile: um arquivo de configuração usado no Docker, uma plataforma de contêineres que permite empacotar, distribuir e executar aplicativos em contêineres. Exemplo prático  [aqui](https://github.com/AndressaSiqueira/Laboratorios/blob/main/Aplica%C3%A7%C3%A3oemOKE/Dockerfile.txt)
 App.py : Arquivo da lógica da aplicação.
 Requirements.txt: Todas as dependências necessárias para aquela aplicação, vai depender da linguagem, ex: nodejs teriamos um arquivo package.json.
 
@@ -31,8 +31,8 @@ Requirements.txt: Todas as dependências necessárias para aquela aplicação, v
 ```bash
 docker login <region-key>.ocir.io
 ```
-(Lista para ver a sigla da sua região https://docs.oracle.com/pt-br/iaas/Content/General/Concepts/regions.htm, ex: Brasil Vinhedo vcp.ocir.io)
-Efetuar login com username (Opção que aparece com nome da tenancy/usuário) e senha, a senha será um auth token que você pode gerar ou tenha acesso no seu usuário.(Como gerar auth token > https://docs.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm)
+Código da sua região. [Lista para ver a sigla da sua região](https://docs.oracle.com/pt-br/iaas/Content/General/Concepts/regions.htm) Ex: Brasil Vinhedo=vcp.ocir.io
+Efetuar login com username (Opção que aparece com nome da tenancy/usuário) e senha, a senha será um auth token que você pode gerar ou tenha acesso no seu usuário.[Como gerar auth token](https://docs.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm)
 
 ```bash
 docker build -t <region-key>.ocir.io/<tenancy-namespace>/repositorio/nome_da_imagem .
@@ -44,7 +44,7 @@ docker push <region-key>.ocir.io/<tenancy-namespace>/repositorio/nome_da_imagem
 ```
 
 Onde:
-region-key: (Lista para ver a sigla da sua região https://docs.oracle.com/pt-br/iaas/Content/General/Concepts/regions.htm, ex: Brasil Vinhedo vcp.ocir.io)
+region-key: Código da sua região. [Lista para ver a sigla da sua região](https://docs.oracle.com/pt-br/iaas/Content/General/Concepts/regions.htm) Ex: Brasil Vinhedo=vcp.ocir.io
 tenancy-namespace: ID único de cada tenancy que pode ser encontrado em Profile > Tenancy > Object storage namespace:
 Repo-name : Nome do repositório Oracle Registry que você quer mandar essa imagem
 tag: tag utilizada para diferenciação de versões, podendo ser latest ou v1/v2 e etc.
@@ -55,7 +55,7 @@ Verfique se sua imagem encontra-se no OCI Registry.
 
 1. Acesse o OKE 
 2. Crie um arquivo chamado Nome_do_arquivo.yaml , esse será o arquivo de deployment da nossa aplicação. 
-O conteudo deve ser como esse arquivo > https://github.com/AndressaSiqueira/Laboratorios/blob/main/Aplica%C3%A7%C3%A3oemOKE/manifesto_oke.yaml
+O conteudo deve ser como [esse arquivo](https://github.com/AndressaSiqueira/Laboratorios/blob/main/Aplica%C3%A7%C3%A3oemOKE/manifesto_oke.yaml)
 
 3. Dê os comandos:
 ```bash
