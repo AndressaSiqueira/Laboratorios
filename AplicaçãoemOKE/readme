@@ -12,15 +12,20 @@ App.py : Arquivo da lógica de aplicação
 Requirements.txt: Todas as dependências necessárias para aquela aplicação, vai depender da linguagem, ex: nodejs teriamos um arquivo package.json.
 
 2. Dentro da pasta do projeto efetuar os seguintes comandos:
-
-- docker build -t INSIRA_AQUI_NOME_DA_IMAGEM .
-
-- docker login <region-key>.ocir.io (Lista para ver a sigla da sua região https://docs.oracle.com/pt-br/iaas/Content/General/Concepts/regions.htm, ex: Brasil Vinhedo vcp.ocir.io)
+```bash
+docker login <region-key>.ocir.io
+```
+(Lista para ver a sigla da sua região https://docs.oracle.com/pt-br/iaas/Content/General/Concepts/regions.htm, ex: Brasil Vinhedo vcp.ocir.io)
 Efetuar login com username (Opção que aparece com nome da tenancy/usuário) e senha, a senha será um auth token que você pode gerar ou tenha acesso no seu usuário.(Como gerar auth token > https://docs.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm)
 
-- docker tag INSIRA_AQUI_NOME_DA_IMAGEM:latest <region-key>.ocir.io/<tenancy-namespace>/<repo-name>:<tag>
+```bash
+docker build -t <region-key>.ocir.io/<tenancy-namespace>/repositorio/nome_da_imagem .
+```
+Ao final da build podemos fazer o push para o OCIR
 
-- docker push <region-key>.ocir.io/<tenancy-namespace>/<repo-name>:<tag>
+```bash
+docker push <region-key>.ocir.io/<tenancy-namespace>/repositorio/nome_da_imagem
+```
 
 Onde:
 region-key: (Lista para ver a sigla da sua região https://docs.oracle.com/pt-br/iaas/Content/General/Concepts/regions.htm, ex: Brasil Vinhedo vcp.ocir.io)
@@ -37,8 +42,16 @@ Verfique se sua imagem encontra-se no OCI Registry.
 O conteudo deve ser como esse arquivo > https://github.com/AndressaSiqueira/Laboratorios/blob/main/Aplica%C3%A7%C3%A3oemOKE/manifesto_oke.yaml
 
 3. Dê os comandos:
+```bash
+kubectl create secret docker-registry ocisecret --docker-server=<region-key>.ocir.io --docker-username='<tenancy-namespace>/<oci-username>' --docker-password='<oci-auth-token>' --docker-email='<email-address>'
+```
+```bash
 kubectl apply -f  Nome_do_arquivo.yaml
+```
+```bash
 kubectl get pods -A (Para verificar se os pods da aplicação estão em status 'running')
+```
+```bash
 kubectl get svc -A (Para pegar o IP External gerado, esse é o IP e porta da nossa aplicação)
-
+```
 
