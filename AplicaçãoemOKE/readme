@@ -33,7 +33,8 @@ Verfique se sua imagem encontra-se no OCI Registry.
 *Deploy da Aplicação no Kubernetes*
 
 1. Acesse o OKE 
-2. Crie um arquivo chamado Nome_do_arquivo.yaml , esse será o arquivo de deployment da nossa aplicação. O conteudo deve ser como aqui.
+2. Crie um arquivo chamado Nome_do_arquivo.yaml , esse será o arquivo de deployment da nossa aplicação. 
+O conteudo deve ser como esse arquivo > https://github.com/AndressaSiqueira/Laboratorios/blob/main/Aplica%C3%A7%C3%A3oemOKE/manifesto_oke.yaml
 
 3. Dê os comandos:
 kubectl apply -f  Nome_do_arquivo.yaml
