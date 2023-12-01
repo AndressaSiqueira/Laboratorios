@@ -33,7 +33,7 @@ Esse passo pode ser feito inicialmente no cloud shell ou em um máquina virtual 
 docker login <region-key>.ocir.io
 ```
 Código da sua região. [Lista para ver a sigla da sua região](https://docs.oracle.com/pt-br/iaas/Content/General/Concepts/regions.htm) Ex: Brasil Vinhedo=vcp.ocir.io
-Efetuar login com username (Opção que aparece com nome da tenancy/usuário) e senha, a senha será um auth token que você pode gerar ou tenha acesso no seu usuário.[Como gerar auth token](https://docs.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm)
+- Efetuar login com username (Entender na opção que aparece com nome da tenancy/usuário) e senha, a senha será um auth token que você pode gerar ou tenha acesso no seu usuário.[Como gerar auth token](https://docs.oracle.com/en-us/iaas/Content/Registry/Tasks/registrygettingauthtoken.htm)
 
 ```bash
 docker build -t <region-key>.ocir.io/<tenancy-namespace>/repositorio/nome_da_imagem .
