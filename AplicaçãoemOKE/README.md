@@ -24,9 +24,9 @@ Esse passo pode ser feito inicialmente no cloud shell ou em um máquina virtual 
 
 1. Criar a pasta do projeto com os arquivos necessários para a construção da imagem:
 
-Dockerfile: um arquivo de configuração usado no Docker, uma plataforma de contêineres que permite empacotar, distribuir e executar aplicativos em contêineres. Exemplo prático  [aqui](https://github.com/AndressaSiqueira/Laboratorios/blob/main/Aplica%C3%A7%C3%A3oemOKE/Dockerfile.txt)
-App.py : Arquivo da lógica da aplicação.
-Requirements.txt: Todas as dependências necessárias para aquela aplicação, vai depender da linguagem, ex: nodejs teriamos um arquivo package.json.
+- Dockerfile: um arquivo de configuração usado no Docker, uma plataforma de contêineres que permite empacotar, distribuir e executar aplicativos em contêineres. Exemplo prático  [aqui](https://github.com/AndressaSiqueira/Laboratorios/blob/main/Aplica%C3%A7%C3%A3oemOKE/Dockerfile.txt)
+- App.py : Arquivo da lógica da aplicação.
+- Requirements.txt: Todas as dependências necessárias para aquela aplicação, vai depender da linguagem, ex: nodejs teriamos um arquivo package.json.
 
 2. Dentro da pasta do projeto efetuar os seguintes comandos:
 ```bash
