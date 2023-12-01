@@ -1,6 +1,7 @@
 ## Pré-Requisitos
 - Todos os serviços precisam ter suas politicas de acesso regulares para que não tenha problemas relacionados á acesso. Ex: grupo dinamico que permite que OCI Registry e OKE se comuniquem.
 - A aplicação precisa ter uma rota de exposição para que o serviço seja comunicável, no caso de uma aplicação python, poderiamos adicionar a seguinte linha:
+```bash
 @app.route('/answer', methods=['POST'])
 def get_answer():
     data = request.get_json()
@@ -11,8 +12,8 @@ def get_answer():
     
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=3000
-
-  Estamos usando o Flask, onde há uma rota de POST aceitável para o path /answer que faz determinada ação, rodando no ambiente local para a porta 3000.
+```
+Nesse caso estamos usando o Flask, onde há uma rota de POST aceitável para o path /answer que faz determinada ação, rodando no ambiente local para a porta 3000.
 
 ## Provisionando Cluster OKE
 Efetuar provisionamento do cluster OKE conforme [documentação oficial da Oracle](https://docs.oracle.com/en-us/iaas/Content/ContEng/Tasks/contengcreatingclusterusingoke_topic-Using_the_Console_to_create_a_Quick_Cluster_with_Default_Settings.htm#create-quick-cluster)
