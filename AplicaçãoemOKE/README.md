@@ -45,10 +45,10 @@ docker push <region-key>.ocir.io/<tenancy-namespace>/repositorio/nome_da_imagem
 ```
 
 Onde:
-region-key: Código da sua região. [Lista para ver a sigla da sua região](https://docs.oracle.com/pt-br/iaas/Content/General/Concepts/regions.htm) Ex: Brasil Vinhedo=vcp.ocir.io
-tenancy-namespace: ID único de cada tenancy que pode ser encontrado em Profile > Tenancy > Object storage namespace:
-Repo-name : Nome do repositório Oracle Registry que você quer mandar essa imagem
-tag: tag utilizada para diferenciação de versões, podendo ser latest ou v1/v2 e etc.
+- region-key: Código da sua região. [Lista para ver a sigla da sua região](https://docs.oracle.com/pt-br/iaas/Content/General/Concepts/regions.htm) Ex: Brasil Vinhedo=vcp.ocir.io
+- tenancy-namespace: ID único de cada tenancy que pode ser encontrado em Profile > Tenancy > Object storage namespace:
+- Repo-name : Nome do repositório Oracle Registry que você quer mandar essa imagem
+- tag: tag utilizada para diferenciação de versões, podendo ser latest ou v1/v2 e etc.
 
 Verfique se sua imagem encontra-se no OCI Registry.
 
