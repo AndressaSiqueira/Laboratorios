@@ -2,15 +2,15 @@
 FROM python:3.9
 # Define o diretório de trabalho dentro do contêiner
 WORKDIR /app
-# Copia o arquivo requirements.txt para o contêiner
+# Copia todos os arquivos necessários do projeto para o contêiner (acrescentar aqui caso tenha mais)
 COPY requirements.txt ./
 COPY /jsons ./
-COPY exampleRAG.py ./
+COPY app.py ./
 RUN pip install --upgrade pip
 # Instala as dependências especificadas no requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 # Copia o restante do código-fonte para o contêiner
 COPY . .
-EXPOSE 3000
+EXPOSE 3000 
 # Define o comando padrão a ser executado quando o contêiner for iniciado
-CMD [ "python", "./exampleRAG.py" ]
+CMD [ "python", "./app.py" ]
